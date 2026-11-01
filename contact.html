@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Noor Nizar Bani Hani</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html" class="active">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="card form-card">
+            <h2><i class="fa-solid fa-paper-plane"></i> Contact Me</h2>
+            <p>Feel free to reach out by filling in the form below:</p>
+
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" placeholder="Enter your email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" placeholder="Enter your country">
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Comments:</label>
+                    <textarea id="comments" rows="5" placeholder="Write your comments or message here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Message</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Noor Nizar Bani Hani (SID: 166769) - All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const country = document.getElementById('country').value.trim();
+            const comments = document.getElementById('comments').value.trim();
+
+            if (fullName === "" || email === "" || country === "" || comments === "") {
+                alert("Please fill in all fields before submitting the form!");
+            } else {
+                alert("Thank you, " + fullName + "! Your message has been submitted successfully.");
+                document.getElementById('contactForm').reset();
+            }
+        });
+    </script>
+
+</body>
+</html>
